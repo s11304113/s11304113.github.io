@@ -1,6 +1,166 @@
+
 <!DOCTYPE html>
-<html>
-<body>
-    <h1>test</h1>
-</body>
-</html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚽 神秘馬桶傳送門</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 測試帳號密碼：admin/ajakb35olvkjvo -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    
+    .toilet {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .flush-button {
+      transition: all 0.3s ease;
+    }
+    
+    .flush-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+    
+    .flush-button:active {
+      transform: scale(0.95);
+    }
+    
+    .water-drop {
+      animation: drip 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes drip {
+      0% { transform: translateY(-20px); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(20px); opacity: 0; }
+    }
+    
+    .sparkle {
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+  <div class="text-center">
+
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
+      🚽 神秘馬桶傳送門 🚽
+    </h1>
+    <p class="text-xl md:text-2xl text-white mb-8 drop-shadow-md">
+      按下沖水鍵，開啟你的奇幻之旅...
+    </p>
+    
+
+    <div class="relative inline-block toilet mb-8">
+
+      <div class="absolute -top-4 -right-4 text-4xl sparkle">✨</div>
+      <div class="absolute -top-4 -left-4 text-4xl sparkle" style="animation-delay: 0.5s">✨</div>
+      <div class="absolute -bottom-4 -right-4 text-4xl sparkle" style="animation-delay: 1s">✨</div>
+      <div class="absolute -bottom-4 -left-4 text-4xl sparkle" style="animation-delay: 1.5s">✨</div>
+      
+
+      <svg width="300" height="300" viewBox="0 0 200 200" class="drop-shadow-2xl">
+
+        <ellipse cx="100" cy="90" rx="60" ry="15" fill="#fff" stroke="#333" stroke-width="2"/>
+        <ellipse cx="100" cy="90" rx="50" ry="12" fill="#e0f2fe"/>
+        
+
+        <path d="M 50 90 Q 45 120 50 150 L 150 150 Q 155 120 150 90 Z" fill="#fff" stroke="#333" stroke-width="2"/>
+        
+
+        <rect x="60" y="150" width="80" height="20" rx="5" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+        
+
+        <rect x="70" y="30" width="60" height="50" rx="8" fill="#fff" stroke="#333" stroke-width="2"/>
+        
+ 
+        <ellipse cx="100" cy="110" rx="35" ry="20" fill="#3b82f6" opacity="0.6"/>
+        
+
+        <circle cx="85" cy="60" r="4" fill="#333"/>
+        <circle cx="115" cy="60" r="4" fill="#333"/>
+        <path d="M 85 70 Q 100 75 115 70" stroke="#333" stroke-width="2" fill="none"/>
+        
+
+        <circle cx="80" cy="95" r="3" fill="#3b82f6" class="water-drop"/>
+        <circle cx="120" cy="95" r="3" fill="#3b82f6" class="water-drop" style="animation-delay: 0.5s"/>
+      </svg>
+    </div>
+    
+
+    <div class="mb-6">
+      <button 
+        onclick="flushToilet()"
+        class="flush-button bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-2xl font-bold py-6 px-12 rounded-full shadow-2xl border-4 border-white cursor-pointer">
+        💦 按我沖水！ 💦
+      </button>
+    
+    </div>
+    
+
+    <p class="text-white text-lg opacity-75 animate-pulse">
+      ⚠️ 警告：沖水後將進入未知領域 ⚠️
+    </p>
+    
+
+    <div class="mt-8 text-4xl space-x-4">
+      <span class="inline-block animate-bounce">🧻</span>
+      <span class="inline-block animate-bounce" style="animation-delay: 0.1s">🚰</span>
+      <span class="inline-block animate-bounce" style="animation-delay: 0.2s">🧼</span>
+      <span class="inline-block animate-bounce" style="animation-delay: 0.3s">🪠</span>
+    </div>
+  </div>
+  
+  <script>
+    function flushToilet() {
+
+      const button = document.querySelector('.flush-button');
+      button.textContent = '🌊 沖水中... 🌊';
+      button.classList.add('animate-spin');
+      
+
+      setTimeout(() => {
+        window.location.href = 'https://youtu.be/xvFZjo5PgG0';
+      }, 1000);
+    }
+    //secret FLAG1{all_guys_are_gay}
+    
+
+    function createBubble() {
+      const bubble = document.createElement('div');
+      bubble.textContent = '💧';
+      bubble.style.position = 'fixed';
+      bubble.style.left = Math.random() * window.innerWidth + 'px';
+      bubble.style.top = window.innerHeight + 'px';
+      bubble.style.fontSize = Math.random() * 20 + 10 + 'px';
+      bubble.style.animation = 'bubble 4s ease-in-out';
+      bubble.style.pointerEvents = 'none';
+      document.body.appendChild(bubble);
+      
+      setTimeout(() => bubble.remove(), 4000);
+    }
+    
+
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes bubble {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(-${window.innerHeight + 100}px) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
